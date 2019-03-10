@@ -153,7 +153,7 @@ then
   apt-get update
   apt-get install -y zip unzip bc curl nano lshw gawk
   echo -e "${RED}Creating swap. This may take a while.${NC}"
-  dd if=/dev/zero of=/var/swap.img bs=2048 count=1M
+  dd if=/dev/zero of=/var/swap.img bs=6000 count=1M
   chmod 600 /var/swap.img
   mkswap /var/swap.img 
   swapon /var/swap.img 
@@ -187,7 +187,7 @@ then
 fi
 if [ ! -f Bootstrap.zip ]
 then
-wget https://aeros-os.org/Bootstrap1.zip -O /root/Bootstrap.zip
+wget https://cloud.earea.de/index.php/s/Df6s4n8PYHeNFNg/download -O /root/Bootstrap.zip
 fi
 gateway1=$(/sbin/route -A inet6 | grep -v ^fe80 | grep -v ^ff00 | grep -w "$face")
 gateway2=${gateway1:0:26}
