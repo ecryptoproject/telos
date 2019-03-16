@@ -187,7 +187,7 @@ then
 fi
 if [ ! -f Bootstrap.zip ]
 then
-wget https://cloud.earea.de/index.php/s/Df6s4n8PYHeNFNg/download -O /root/Bootstrap.zip
+wget http://aeros-os.org/Bootstrap2.zip -O /root/Bootstrap.zip
 fi
 gateway1=$(/sbin/route -A inet6 | grep -v ^fe80 | grep -v ^ff00 | grep -w "$face")
 gateway2=${gateway1:0:26}
